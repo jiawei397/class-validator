@@ -1,6 +1,6 @@
 import { ValidationOptions } from '../ValidationOptions.ts';
 import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import isPassportNumberValidator from 'validator/lib/isPassportNumber';
+import isPassportNumberValidator from 'validator/lib/isPassportNumber.ts';
 
 export const IS_PASSPORT_NUMBER = 'isPassportNumber';
 

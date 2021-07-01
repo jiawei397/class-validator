@@ -1,6 +1,6 @@
 import { ValidationOptions } from '../ValidationOptions.ts';
 import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import isSurrogatePairValidator from 'validator/lib/isSurrogatePair';
+import isSurrogatePairValidator from 'validator/lib/isSurrogatePair.ts';
 
 export const IS_SURROGATE_PAIR = 'isSurrogatePair';
 

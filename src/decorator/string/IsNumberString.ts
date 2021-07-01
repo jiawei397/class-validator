@@ -1,7 +1,7 @@
 import { ValidationOptions } from '../ValidationOptions.ts';
 import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import isNumericValidator from 'validator/lib/isNumeric';
-import ValidatorJS from 'validator';
+import isNumericValidator from 'validator/lib/isNumeric.ts';
+import ValidatorJS from 'validator.ts';
 
 export const IS_NUMBER_STRING = 'isNumberString';
 

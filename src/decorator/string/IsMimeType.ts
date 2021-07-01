@@ -1,6 +1,6 @@
 import { ValidationOptions } from '../ValidationOptions.ts';
 import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import isMimeTypeValidator from 'validator/lib/isMimeType';
+import isMimeTypeValidator from 'validator/lib/isMimeType.ts';
 
 export const IS_MIME_TYPE = 'isMimeType';
 

@@ -1,7 +1,7 @@
 import { ValidationOptions } from '../ValidationOptions.ts';
 import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import isFqdnValidator from 'validator/lib/isFQDN';
-import ValidatorJS from 'validator';
+import isFqdnValidator from 'validator/lib/isFQDN.ts';
+import ValidatorJS from 'validator/mod.ts';
 
 export const IS_FQDN = 'isFqdn';
 

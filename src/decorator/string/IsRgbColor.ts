@@ -1,6 +1,6 @@
 import { ValidationOptions } from '../ValidationOptions.ts';
 import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import isRgbColorValidator from 'validator/lib/isRgbColor';
+import isRgbColorValidator from 'validator/lib/isRgbColor.ts';
 
 export const IS_RGB_COLOR = 'isRgbColor';
 
