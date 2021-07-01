@@ -1,5 +1,5 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
 import isFqdnValidator from 'validator/lib/isFQDN';
 import ValidatorJS from 'validator';
 

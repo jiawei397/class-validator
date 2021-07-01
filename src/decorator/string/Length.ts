@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isLengthValidator from 'validator/lib/isLength';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isLengthValidator from 'validator/lib/isLength.ts';
 
 export const IS_LENGTH = 'isLength';
 

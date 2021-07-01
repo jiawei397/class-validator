@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isHexadecimalValidator from 'validator/lib/isHexadecimal';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isHexadecimalValidator from 'validator/lib/isHexadecimal.ts';
 
 export const IS_HEXADECIMAL = 'isHexadecimal';
 

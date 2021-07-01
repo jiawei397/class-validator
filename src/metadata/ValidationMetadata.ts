@@ -1,5 +1,5 @@
-import { ValidationMetadataArgs } from './ValidationMetadataArgs';
-import { ValidationArguments } from '../validation/ValidationArguments';
+import { ValidationMetadataArgs } from './ValidationMetadataArgs.ts';
+import { ValidationArguments } from '../validation/ValidationArguments.ts';
 
 /**
  * This metadata contains validation rules.

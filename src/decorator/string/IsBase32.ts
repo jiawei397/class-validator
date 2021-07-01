@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isBase32Validator from 'validator/lib/isBase32';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isBase32Validator from 'validator/lib/isBase32.ts';
 
 export const IS_BASE32 = 'isBase32';
 

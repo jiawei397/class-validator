@@ -1,4 +1,4 @@
-import { ValidationArguments } from './ValidationArguments';
+import { ValidationArguments } from './ValidationArguments.ts';
 
 /**
  * Convert the constraint to a string to be shown in an error

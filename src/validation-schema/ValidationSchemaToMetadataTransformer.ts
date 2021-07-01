@@ -1,7 +1,7 @@
-import { ValidationSchema } from './ValidationSchema';
-import { ValidationMetadata } from '../metadata/ValidationMetadata';
-import { ValidationMetadataArgs } from '../metadata/ValidationMetadataArgs';
-import { ValidationOptions } from '../decorator/ValidationOptions';
+import { ValidationSchema } from './ValidationSchema.ts'
+import { ValidationMetadata } from '../metadata/ValidationMetadata.ts'
+import { ValidationMetadataArgs } from '../metadata/ValidationMetadataArgs.ts'
+import { ValidationOptions } from '../decorator/ValidationOptions.ts'
 
 /**
  * Used to transform validation schemas to validation metadatas.

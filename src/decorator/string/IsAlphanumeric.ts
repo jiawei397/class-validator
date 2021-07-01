@@ -1,7 +1,7 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isAlphanumericValidator from 'validator/lib/isAlphanumeric';
-import ValidatorJS from 'validator';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isAlphanumericValidator from 'validator/lib/isAlphanumeric.ts';
+import ValidatorJS from 'validator/mod.ts';
 
 export const IS_ALPHANUMERIC = 'isAlphanumeric';
 

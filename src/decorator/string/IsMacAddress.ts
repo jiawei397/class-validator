@@ -1,7 +1,7 @@
-import { ValidationOptions, isValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isMacAddressValidator from 'validator/lib/isMACAddress';
-import ValidatorJS from 'validator';
+import { ValidationOptions, isValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isMacAddressValidator from 'validator/lib/isMACAddress.ts';
+import ValidatorJS from 'validator/mod.ts';
 
 export const IS_MAC_ADDRESS = 'isMacAddress';
 

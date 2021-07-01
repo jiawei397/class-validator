@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isOctalValidator from 'validator/lib/isOctal';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isOctalValidator from 'validator/lib/isOctal.ts';
 
 export const IS_OCTAL = 'isOctal';
 

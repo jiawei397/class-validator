@@ -1,7 +1,7 @@
-import { ValidationError } from './ValidationError';
-import { ValidatorOptions } from './ValidatorOptions';
-import { ValidationExecutor } from './ValidationExecutor';
-import { ValidationOptions } from '../decorator/ValidationOptions';
+import { ValidationError } from './ValidationError.ts'
+import { ValidatorOptions } from './ValidatorOptions.ts'
+import { ValidationExecutor } from './ValidationExecutor.ts'
+import { ValidationOptions } from '../decorator/ValidationOptions.ts'
 
 /**
  * Validator performs validation of the given object based on its metadata.

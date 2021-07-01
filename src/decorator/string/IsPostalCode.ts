@@ -1,7 +1,7 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isPostalCodeValidator from 'validator/lib/isPostalCode';
-import ValidatorJS from 'validator';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isPostalCodeValidator from 'validator/lib/isPostalCode.ts';
+import ValidatorJS from 'validator/mod.ts';
 
 export const IS_POSTAL_CODE = 'isPostalCode';
 

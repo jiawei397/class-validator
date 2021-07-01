@@ -1,4 +1,4 @@
-import { ValidationArguments } from '../validation/ValidationArguments';
+import { ValidationArguments } from '../validation/ValidationArguments.ts';
 
 /**
  * Options used to pass to validation decorators.

@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import matchesValidator from 'validator/lib/matches';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import matchesValidator from 'validator/lib/matches.ts';
 
 export const MATCHES = 'matches';
 

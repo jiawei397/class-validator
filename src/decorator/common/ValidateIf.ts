@@ -1,8 +1,8 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { ValidationMetadataArgs } from '../../metadata/ValidationMetadataArgs';
-import { ValidationTypes } from '../../validation/ValidationTypes';
-import { ValidationMetadata } from '../../metadata/ValidationMetadata';
-import { getMetadataStorage } from '../../metadata/MetadataStorage';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { ValidationMetadataArgs } from '../../metadata/ValidationMetadataArgs.ts';
+import { ValidationTypes } from '../../validation/ValidationTypes.ts';
+import { ValidationMetadata } from '../../metadata/ValidationMetadata.ts';
+import { getMetadataStorage } from '../../metadata/MetadataStorage.ts';
 
 /**
  * Ignores the other validators on a property when the provided condition function returns false.

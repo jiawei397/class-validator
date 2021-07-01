@@ -1,7 +1,7 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import ValidatorJS from 'validator';
-import { isISO8601 } from './IsISO8601';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import ValidatorJS from 'validator/mod.ts';
+import { isISO8601 } from './IsISO8601.ts';
 
 export const IS_DATE_STRING = 'isDateString';
 

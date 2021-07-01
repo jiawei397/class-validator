@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isByteLengthValidator from 'validator/lib/isByteLength';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isByteLengthValidator from 'validator/lib/isByteLength.ts';
 
 export const IS_BYTE_LENGTH = 'isByteLength';
 

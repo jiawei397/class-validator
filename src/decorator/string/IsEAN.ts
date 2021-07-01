@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isEANValidator from 'validator/lib/isEAN';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isEANValidator from 'validator/lib/isEAN.ts';
 
 export const IS_EAN = 'isEAN';
 

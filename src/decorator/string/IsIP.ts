@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isIPValidator from 'validator/lib/isIP';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isIPValidator from 'validator/lib/isIP.ts';
 
 export type IsIpVersion = '4' | '6' | 4 | 6;
 

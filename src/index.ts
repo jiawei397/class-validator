@@ -1,26 +1,26 @@
-import { ValidationError } from './validation/ValidationError';
-import { ValidatorOptions } from './validation/ValidatorOptions';
-import { ValidationSchema } from './validation-schema/ValidationSchema';
-import { getMetadataStorage } from './metadata/MetadataStorage';
-import { Validator } from './validation/Validator';
-import { getFromContainer } from './container';
+import { ValidationError } from './validation/ValidationError.ts'
+import { ValidatorOptions } from './validation/ValidatorOptions.ts'
+import { ValidationSchema } from './validation-schema/ValidationSchema.ts'
+import { getMetadataStorage } from './metadata/MetadataStorage.ts'
+import { Validator } from './validation/Validator.ts'
+import { getFromContainer } from './container.ts'
 
 // -------------------------------------------------------------------------
 // Export everything api users needs
 // -------------------------------------------------------------------------
 
-export * from './container';
-export * from './decorator/decorators';
-export * from './decorator/ValidationOptions';
-export * from './validation/ValidatorConstraintInterface';
-export * from './validation/ValidationError';
-export * from './validation/ValidatorOptions';
-export * from './validation/ValidationArguments';
-export * from './validation/ValidationTypes';
-export * from './validation/Validator';
-export * from './validation-schema/ValidationSchema';
-export * from './register-decorator';
-export * from './metadata/MetadataStorage';
+export * from './container.ts'
+export * from './decorator/decorators.ts'
+export * from './decorator/ValidationOptions.ts'
+export * from './validation/ValidatorConstraintInterface.ts'
+export * from './validation/ValidationError.ts'
+export * from './validation/ValidatorOptions.ts'
+export * from './validation/ValidationArguments.ts'
+export * from './validation/ValidationTypes.ts'
+export * from './validation/Validator.ts'
+export * from './validation-schema/ValidationSchema.ts'
+export * from './register-decorator.ts'
+export * from './metadata/MetadataStorage.ts'
 
 // -------------------------------------------------------------------------
 // Shortcut methods for api users

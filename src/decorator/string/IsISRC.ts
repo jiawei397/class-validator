@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isISRCValidator from 'validator/lib/isISRC';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isISRCValidator from 'validator/lib/isISRC.ts';
 
 export const IS_ISRC = 'isISRC';
 

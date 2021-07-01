@@ -1,0 +1,6 @@
+{
+    "imports": {
+       "validator/": "https://deno.land/x/deno_validator@v0.0.2/",
+       "libphonenumber-js": "https://esm.sh/libphonenumber-js"
+    }
+ }

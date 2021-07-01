@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import { isObject } from '../typechecker/IsObject';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import { isObject } from '../typechecker/IsObject.ts';
 
 export const IS_NOT_EMPTY_OBJECT = 'isNotEmptyObject';
 

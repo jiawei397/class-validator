@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isPortValidator from 'validator/lib/isPort';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isPortValidator from 'validator/lib/isPort.ts';
 
 export const IS_PORT = 'isPort';
 

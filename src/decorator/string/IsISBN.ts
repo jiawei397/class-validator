@@ -1,6 +1,6 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isIsbnValidator from 'validator/lib/isISBN';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isIsbnValidator from 'validator/lib/isISBN.ts';
 
 export type IsISBNVersion = '10' | '13' | 10 | 13;
 

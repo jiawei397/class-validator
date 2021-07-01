@@ -1,8 +1,8 @@
-import { ValidationMetadata } from './ValidationMetadata';
-import { ConstraintMetadata } from './ConstraintMetadata';
-import { ValidationSchema } from '../validation-schema/ValidationSchema';
-import { ValidationSchemaToMetadataTransformer } from '../validation-schema/ValidationSchemaToMetadataTransformer';
-import { getGlobal } from '../utils';
+import { ValidationMetadata } from './ValidationMetadata.ts'
+import { ConstraintMetadata } from './ConstraintMetadata.ts'
+import { ValidationSchema } from '../validation-schema/ValidationSchema.ts'
+import { ValidationSchemaToMetadataTransformer } from '../validation-schema/ValidationSchemaToMetadataTransformer.ts'
+import { getGlobal } from '../utils/index.ts'
 
 /**
  * Storage all metadatas.

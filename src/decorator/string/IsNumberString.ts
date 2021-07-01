@@ -1,5 +1,5 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
 import isNumericValidator from 'validator/lib/isNumeric';
 import ValidatorJS from 'validator';
 

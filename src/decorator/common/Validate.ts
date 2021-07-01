@@ -1,9 +1,9 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { ValidationMetadataArgs } from '../../metadata/ValidationMetadataArgs';
-import { ValidationMetadata } from '../../metadata/ValidationMetadata';
-import { getMetadataStorage } from '../../metadata/MetadataStorage';
-import { ValidationTypes } from '../../validation/ValidationTypes';
-import { ConstraintMetadata } from '../../metadata/ConstraintMetadata';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { ValidationMetadataArgs } from '../../metadata/ValidationMetadataArgs.ts';
+import { ValidationMetadata } from '../../metadata/ValidationMetadata.ts';
+import { getMetadataStorage } from '../../metadata/MetadataStorage.ts';
+import { ValidationTypes } from '../../validation/ValidationTypes.ts';
+import { ConstraintMetadata } from '../../metadata/ConstraintMetadata.ts';
 
 /**
  * Registers custom validator class.

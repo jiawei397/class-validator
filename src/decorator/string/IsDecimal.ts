@@ -1,7 +1,7 @@
-import { ValidationOptions } from '../ValidationOptions';
-import { buildMessage, ValidateBy } from '../common/ValidateBy';
-import isDecimalValidator from 'validator/lib/isDecimal';
-import ValidatorJS from 'validator';
+import { ValidationOptions } from '../ValidationOptions.ts';
+import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import isDecimalValidator from 'validator/lib/isDecimal.ts';
+import ValidatorJS from 'validator/mod.ts';
 
 export const IS_DECIMAL = 'isDecimal';
 

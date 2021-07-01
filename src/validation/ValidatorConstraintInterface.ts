@@ -1,4 +1,4 @@
-import { ValidationArguments } from './ValidationArguments';
+import { ValidationArguments } from './ValidationArguments.ts';
 /**
  * Custom validators must implement this interface to provide custom validation logic.
  */
