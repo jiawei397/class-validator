@@ -37,7 +37,7 @@ export class ValidationMetadata {
   /**
    * Validation message to be shown in the case of error.
    */
-  message: string | ((args: ValidationArguments) => string);
+  message?: string | ((args: ValidationArguments) => string);
 
   /**
    * Validation groups used for this validation.
@@ -72,14 +72,14 @@ export class ValidationMetadata {
     this.type = args.type;
     this.target = args.target;
     this.propertyName = args.propertyName;
-    this.constraints = args.constraints;
-    this.constraintCls = args.constraintCls;
+    this.constraints = args.constraints!;
+    this.constraintCls = args.constraintCls!;
     this.validationTypeOptions = args.validationTypeOptions;
     if (args.validationOptions) {
-      this.message = args.validationOptions.message;
-      this.groups = args.validationOptions.groups;
+      this.message = args.validationOptions.message!;
+      this.groups = args.validationOptions.groups!;
       this.always = args.validationOptions.always;
-      this.each = args.validationOptions.each;
+      this.each = args.validationOptions.each!;
       this.context = args.validationOptions.context;
     }
   }

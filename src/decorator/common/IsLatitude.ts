@@ -1,6 +1,6 @@
 import { ValidationOptions } from '../ValidationOptions.ts';
-import { buildMessage, ValidateBy } from './ValidateBy';
-import { isLatLong } from './IsLatLong';
+import { buildMessage, ValidateBy } from './ValidateBy.ts';
+import { isLatLong } from './IsLatLong.ts';
 
 export const IS_LATITUDE = 'isLatitude';
 

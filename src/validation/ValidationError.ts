@@ -12,7 +12,7 @@ export class ValidationError {
   /**
    * Object's property that haven't pass validation.
    */
-  property: string;
+  property?: string;
 
   /**
    * Value that haven't pass a validation.
@@ -51,22 +51,21 @@ export class ValidationError {
     const boldEnd = shouldDecorate ? `\x1b[22m` : ``;
     const propConstraintFailed = (propertyName: string): string =>
       ` - property ${boldStart}${parentPath}${propertyName}${boldEnd} has failed the following constraints: ${boldStart}${Object.keys(
-        this.constraints
+        this.constraints!
       ).join(`, `)}${boldEnd} \n`;
 
     if (!hasParent) {
       return (
-        `An instance of ${boldStart}${
-          this.target ? this.target.constructor.name : 'an object'
+        `An instance of ${boldStart}${this.target ? this.target.constructor.name : 'an object'
         }${boldEnd} has failed the validation:\n` +
-        (this.constraints ? propConstraintFailed(this.property) : ``) +
+        (this.constraints ? propConstraintFailed(this.property!) : ``) +
         (this.children
           ? this.children.map(childError => childError.toString(shouldDecorate, true, this.property)).join(``)
           : ``)
       );
     } else {
       // we format numbers as array indexes for better readability.
-      const formattedProperty = Number.isInteger(+this.property)
+      const formattedProperty = Number.isInteger(+this.property!)
         ? `[${this.property}]`
         : `${parentPath ? `.` : ``}${this.property}`;
 
@@ -75,8 +74,8 @@ export class ValidationError {
       } else {
         return this.children
           ? this.children
-              .map(childError => childError.toString(shouldDecorate, true, `${parentPath}${formattedProperty}`))
-              .join(``)
+            .map(childError => childError.toString(shouldDecorate, true, `${parentPath}${formattedProperty}`))
+            .join(``)
           : ``;
       }
     }

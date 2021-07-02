@@ -142,7 +142,7 @@ export class MetadataStorage {
  * Metadata storage follows the best practices and stores metadata in a global variable.
  */
 export function getMetadataStorage(): MetadataStorage {
-  const global = getGlobal();
+  const global: any = getGlobal();
 
   if (!global.classValidatorMetadataStorage) {
     global.classValidatorMetadataStorage = new MetadataStorage();

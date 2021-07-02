@@ -9,7 +9,7 @@ export const IS_BASE64 = 'isBase64';
  * If given value is not a string, then it returns false.
  */
 export function isBase64(value: unknown): boolean {
-  return typeof value === 'string' && isBase64Validator(value);
+  return typeof value === 'string' && isBase64Validator(value, {});
 }
 
 /**

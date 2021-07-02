@@ -81,7 +81,7 @@ export class Validator {
     const executor = new ValidationExecutor(this, options);
     executor.ignoreAsyncValidations = true;
     const validationErrors: ValidationError[] = [];
-    executor.execute(object, schema, validationErrors);
+    executor.execute(object, schema!, validationErrors);
     return executor.stripEmptyErrors(validationErrors);
   }
 
@@ -104,7 +104,7 @@ export class Validator {
 
     const executor = new ValidationExecutor(this, options);
     const validationErrors: ValidationError[] = [];
-    executor.execute(object, schema, validationErrors);
+    executor.execute(object, schema!, validationErrors);
 
     return Promise.all(executor.awaitingPromises).then(() => {
       return executor.stripEmptyErrors(validationErrors);

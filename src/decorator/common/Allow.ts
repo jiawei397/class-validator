@@ -16,5 +16,5 @@ export function Allow(validationOptions?: ValidationOptions): PropertyDecorator 
       validationOptions: validationOptions,
     };
     getMetadataStorage().addValidationMetadata(new ValidationMetadata(args));
-  };
+  } as any;
 }

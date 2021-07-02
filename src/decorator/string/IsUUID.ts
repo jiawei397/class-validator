@@ -11,7 +11,7 @@ export const IS_UUID = 'isUuid';
  * If given value is not a string, then it returns false.
  */
 export function isUUID(value: unknown, version?: UUIDVersion): boolean {
-  return typeof value === 'string' && isUuidValidator(value, version);
+  return typeof value === 'string' && isUuidValidator(value, version as any);
 }
 
 /**
@@ -24,7 +24,7 @@ export function IsUUID(version?: UUIDVersion, validationOptions?: ValidationOpti
       name: IS_UUID,
       constraints: [version],
       validator: {
-        validate: (value, args): boolean => isUUID(value, args.constraints[0]),
+        validate: (value, args): boolean => isUUID(value, args!.constraints[0]),
         defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be a UUID', validationOptions),
       },
     },

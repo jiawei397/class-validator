@@ -21,5 +21,5 @@ export function IsOptional(validationOptions?: ValidationOptions): PropertyDecor
       validationOptions: validationOptions,
     };
     getMetadataStorage().addValidationMetadata(new ValidationMetadata(args));
-  };
+  } as any;
 }

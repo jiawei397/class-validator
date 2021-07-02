@@ -17,7 +17,7 @@ export class ConstraintMetadata {
   /**
    * Custom validation's name, that will be used as validation error type.
    */
-  name: string;
+  name?: string;
 
   /**
    * Indicates if this validation is asynchronous or not.
@@ -30,7 +30,7 @@ export class ConstraintMetadata {
 
   constructor(target: Function, name?: string, async: boolean = false) {
     this.target = target;
-    this.name = name;
+    this.name = name!;
     this.async = async;
   }
 

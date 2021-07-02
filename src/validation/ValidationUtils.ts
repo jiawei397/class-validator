@@ -23,7 +23,7 @@ export class ValidationUtils {
       messageString = message;
     }
 
-    if (messageString && validationArguments.constraints instanceof Array) {
+    if (messageString! && validationArguments.constraints instanceof Array) {
       validationArguments.constraints.forEach((constraint, index) => {
         messageString = messageString.replace(
           new RegExp(`\\$constraint${index + 1}`, 'g'),
@@ -33,15 +33,15 @@ export class ValidationUtils {
     }
 
     if (
-      messageString &&
+      messageString! &&
       validationArguments.value !== undefined &&
       validationArguments.value !== null &&
       typeof validationArguments.value === 'string'
     )
       messageString = messageString.replace(/\$value/g, validationArguments.value);
-    if (messageString) messageString = messageString.replace(/\$property/g, validationArguments.property);
-    if (messageString) messageString = messageString.replace(/\$target/g, validationArguments.targetName);
+    if (messageString!) messageString = messageString.replace(/\$property/g, validationArguments.property);
+    if (messageString!) messageString = messageString.replace(/\$target/g, validationArguments.targetName);
 
-    return messageString;
+    return messageString!;
   }
 }
