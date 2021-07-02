@@ -1,33 +1,39 @@
-import { convertToArray } from "../src/utils";
+// deno test test/utils.spec.ts
+import { convertToArray } from "../src/utils/index.ts";
 
-describe("convertToArray", () => {
-  it("convert Set into array", () => {
-    const setExample = new Set<string>();
-    setExample.add("hello");
-    setExample.add("world");
-    const newArr = convertToArray(setExample);
-    expect(newArr).toBeInstanceOf(Array);
-    expect(newArr.length).toEqual(2);
-    expect(newArr).toContain("hello");
-    expect(newArr).toContain("world");
-  });
+import { assert, assertEquals, assertArrayIncludes } from "https://deno.land/std@0.100.0/testing/asserts.ts";
 
-  it("convert Map into array of values", () => {
-    const map = new Map<string, string>();
-    map.set("key1", "hello");
-    map.set("key2", "world");
-    const newArr = convertToArray(map);
-    expect(newArr).toBeInstanceOf(Array);
-    expect(newArr.length).toEqual(2);
-    expect(newArr).toContain("hello");
-    expect(newArr).toContain("world");
-  });
+Deno.test("convert Set into array", () => {
+  const setExample = new Set<string>();
+  setExample.add("hello");
+  setExample.add("world");
+  const newArr = convertToArray(setExample);
+  assert(Array.isArray(newArr));
+  assertEquals(newArr.length, 2);
+  assertArrayIncludes(newArr, ["hello"]);
+  assertArrayIncludes(newArr, ["world"]);
+});
 
-  it("should return array untouched", () => {
-    const arr = ["hello", "world"];
-    expect(arr).toBeInstanceOf(Array);
-    expect(arr.length).toEqual(2);
-    expect(arr).toContain("hello");
-    expect(arr).toContain("world");
-  });
+//   it("convert Map into array of values", () => {
+Deno.test("convert Map into array of values", () => {
+  const map = new Map<string, string>();
+  map.set("key1", "hello");
+  map.set("key2", "world");
+  const newArr = convertToArray(map);
+
+  assert(Array.isArray(newArr));
+  assertEquals(newArr.length, 2);
+  assertArrayIncludes(newArr, ["hello"]);
+  assertArrayIncludes(newArr, ["world"]);
+});
+
+Deno.test("convert Set into array", () => {
+  const setExample = new Set<string>();
+  setExample.add("hello");
+  setExample.add("world");
+  const newArr = convertToArray(setExample);
+  assert(Array.isArray(newArr));
+  assertEquals(newArr.length, 2);
+  assertArrayIncludes(newArr, ["hello"]);
+  assertArrayIncludes(newArr, ["world"]);
 });
