@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import { CountryCode, parsePhoneNumberFromString } from "libphonenumber-js";
+import { CountryCode, parsePhoneNumberFromString } from "../../deps.ts";
 
 export const IS_PHONE_NUMBER = "isPhoneNumber";
 

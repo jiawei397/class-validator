@@ -1,7 +1,7 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import {isMobilePhone as isMobilePhoneValidator} from "../../deps.ts";
-import ValidatorJS from "validator/types.ts";
+import { isMobilePhone as isMobilePhoneValidator } from "../../deps.ts";
+import type { ValidatorJS } from "../../deps.ts";
 
 export const IS_MOBILE_PHONE = "isMobilePhone";
 
