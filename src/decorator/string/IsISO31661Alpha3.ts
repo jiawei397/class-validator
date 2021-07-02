@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isISO31661Alpha3Validator from "validator/lib/isISO31661Alpha3.ts";
+import {isISO31661Alpha3 as isISO31661Alpha3Validator} from "../../deps.ts";
 
 export const IS_ISO31661_ALPHA_3 = "isISO31661Alpha3";
 

@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isHSLValidator from "validator/lib/isHSL.ts";
+import {isHSL as isHSLValidator} from "../../deps.ts";
 
 export const IS_HSL = "isHSL";
 

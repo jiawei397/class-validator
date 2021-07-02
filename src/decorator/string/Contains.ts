@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import containsValidator from "validator/lib/contains.ts";
+import {contains as containsValidator} from "../../deps.ts";
 
 export const CONTAINS = "contains";
 

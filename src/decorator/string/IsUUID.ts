@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isUuidValidator from "validator/lib/isUUID.ts";
+import {isUUID as isUuidValidator} from "../../deps.ts";
 
 export type UUIDVersion = "3" | "4" | "5" | "all" | 3 | 4 | 5;
 

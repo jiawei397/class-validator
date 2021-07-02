@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isSemVerValidator from "validator/lib/isSemVer.ts";
+import {isSemVer as isSemVerValidator} from "../../deps.ts";
 
 export const IS_SEM_VER = "isSemVer";
 

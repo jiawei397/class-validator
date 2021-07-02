@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isLengthValidator from "validator/lib/isLength.ts";
+import {isLength as isLengthValidator} from "../../deps.ts";
 
 export const MIN_LENGTH = "minLength";
 

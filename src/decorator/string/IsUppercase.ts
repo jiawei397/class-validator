@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isUppercaseValidator from "validator/lib/isUppercase.ts";
+import {isUppercase as isUppercaseValidator} from "../../deps.ts";
 
 export const IS_UPPERCASE = "isUppercase";
 

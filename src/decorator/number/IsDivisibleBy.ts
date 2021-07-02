@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isDivisibleByValidator from "validator/lib/isDivisibleBy.ts";
+import {isDivisibleBy as isDivisibleByValidator} from "../../deps.ts";
 
 export const IS_DIVISIBLE_BY = "isDivisibleBy";
 

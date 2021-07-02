@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isPostalCodeValidator from "validator/lib/isPostalCode.ts";
+import {isPostalCode as isPostalCodeValidator} from "../../deps.ts";
 import ValidatorJS from "validator/types.ts";
 
 export const IS_POSTAL_CODE = "isPostalCode";

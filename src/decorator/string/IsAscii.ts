@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isAsciiValidator from "validator/lib/isAscii.ts";
+import {isAscii as isAsciiValidator} from "../../deps.ts";
 
 export const IS_ASCII = "isAscii";
 

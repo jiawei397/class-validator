@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isLocaleValidator from "validator/lib/isLocale.ts";
+import {isLocale as isLocaleValidator} from "../../deps.ts";
 
 export const IS_LOCALE = "isLocale";
 

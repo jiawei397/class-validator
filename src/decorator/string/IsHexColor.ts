@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isHexColorValidator from "validator/lib/isHexColor.ts";
+import {isHexColor as isHexColorValidator} from "../../deps.ts";
 
 export const IS_HEX_COLOR = "isHexColor";
 

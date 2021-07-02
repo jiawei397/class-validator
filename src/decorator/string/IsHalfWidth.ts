@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isHalfWidthValidator from "validator/lib/isHalfWidth.ts";
+import {isHalfWidth as isHalfWidthValidator} from "../../deps.ts";
 
 export const IS_HALF_WIDTH = "isHalfWidth";
 

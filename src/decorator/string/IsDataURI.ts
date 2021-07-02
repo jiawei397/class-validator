@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isDataURIValidator from "validator/lib/isDataURI.ts";
+import {isDataURI as isDataURIValidator} from "../../deps.ts";
 
 export const IS_DATA_URI = "isDataURI";
 

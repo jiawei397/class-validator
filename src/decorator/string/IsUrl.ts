@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isUrlValidator from "validator/lib/isURL.ts";
+import {isURL as isUrlValidator} from "../../deps.ts";
 import ValidatorJS from "validator/types.ts";
 
 export const IS_URL = "isUrl";

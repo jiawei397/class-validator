@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isCreditCardValidator from "validator/lib/isCreditCard.ts";
+import {isCreditCard as isCreditCardValidator} from "../../deps.ts";
 
 export const IS_CREDIT_CARD = "isCreditCard";
 

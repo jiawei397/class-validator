@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isAlphaValidator from "validator/lib/isAlpha.ts";
+import {isAlpha as isAlphaValidator} from "../../deps.ts";
 import ValidatorJS from "validator/types.ts";
 
 export const IS_ALPHA = "isAlpha";

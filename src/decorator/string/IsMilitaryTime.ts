@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import matchesValidator from "validator/lib/matches.ts";
+import {matches as matchesValidator} from "../../deps.ts";
 
 export const IS_MILITARY_TIME = "isMilitaryTime";
 

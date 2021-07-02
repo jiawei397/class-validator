@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isLowercaseValidator from "validator/lib/isLowercase.ts";
+import {isLowercase as isLowercaseValidator} from "../../deps.ts";
 
 export const IS_LOWERCASE = "isLowercase";
 

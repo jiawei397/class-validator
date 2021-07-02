@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isBtcAddressValidator from "validator/lib/isBtcAddress.ts";
+import {isBtcAddress as isBtcAddressValidator} from "../../deps.ts";
 
 export const IS_BTC_ADDRESS = "isBtcAddress";
 

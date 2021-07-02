@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isIBANValidator from "validator/lib/isIBAN.ts";
+import {isIBAN as isIBANValidator} from "../../deps.ts";
 
 export const IS_IBAN = "isIBAN";
 

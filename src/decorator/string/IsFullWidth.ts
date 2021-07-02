@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isFullWidthValidator from "validator/lib/isFullWidth.ts";
+import {isFullWidth as isFullWidthValidator} from "../../deps.ts";
 
 export const IS_FULL_WIDTH = "isFullWidth";
 

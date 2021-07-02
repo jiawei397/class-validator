@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isJwtValidator from "validator/lib/isJWT.ts";
+import {isJWT as isJwtValidator} from "../../deps.ts";
 
 export const IS_JWT = "isJwt";
 

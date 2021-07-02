@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isMagnetURIValidator from "validator/lib/isMagnetURI.ts";
+import {isMagnetURI as isMagnetURIValidator} from "../../deps.ts";
 
 export const IS_MAGNET_URI = "isMagnetURI";
 

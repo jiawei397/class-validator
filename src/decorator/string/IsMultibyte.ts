@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isMultibyteValidator from "validator/lib/isMultibyte.ts";
+import {isMultibyte as isMultibyteValidator} from "../../deps.ts";
 
 export const IS_MULTIBYTE = "isMultibyte";
 

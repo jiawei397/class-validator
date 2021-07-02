@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isJSONValidator from "validator/lib/isJSON.ts";
+import {isJSON as isJSONValidator} from "../../deps.ts";
 
 export const IS_JSON = "isJson";
 

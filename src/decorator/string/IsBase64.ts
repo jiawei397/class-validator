@@ -1,6 +1,6 @@
 import { ValidationOptions } from "../ValidationOptions.ts";
 import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
-import isBase64Validator from "validator/lib/isBase64.ts";
+import {isBase64 as isBase64Validator} from "../../deps.ts";
 
 export const IS_BASE64 = "isBase64";
 
