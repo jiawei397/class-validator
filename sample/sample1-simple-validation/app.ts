@@ -1,5 +1,5 @@
-import { validate } from "../../src/index";
-import { Post, PostType } from "./Post";
+import { validate } from "../../src/index.ts";
+import { Post, PostType } from "./Post.ts";
 
 // Sample1. simple validation
 

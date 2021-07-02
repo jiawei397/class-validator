@@ -1,10 +1,8 @@
-import { registerSchema, validate } from "../../src/index";
-import { Post } from "./Post";
+import { registerSchema, validate } from "../../src/index.ts";
+import { Post } from "./Post.ts";
 
 // load schema. we load it a bit tricky way because we output source code into separate directory, so our json resource left in another directory
-const postSchema = require(
-  __dirname + "/../../../../sample/sample5-schemas/post.json",
-);
+const postSchema = JSON.parse(Deno.readTextFileSync('sample/sample5-schemas/post.json'));
 
 // register this schema
 registerSchema(postSchema);
@@ -147,7 +145,7 @@ post11.rating = 10; // should pass
 post11.email = "info@google.com"; // should pass
 post11.site = "google.com"; // should pass
 post11.createDate = new Date(); // should pass
-post11.tags = null;
+post11.tags = null!;
 
 validate("post", post11).then((result) => {
   console.log("11. should not pass: ", result); // should not pass

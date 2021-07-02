@@ -1,8 +1,8 @@
-import { registerDecorator } from "../../src/index";
-import { ValidationOptions } from "../../src/decorator/ValidationOptions";
-import { ValidatorConstraintInterface } from "../../src/validation/ValidatorConstraintInterface";
-import { ValidatorConstraint } from "../../src/decorator/decorators";
-import { ValidationArguments } from "../../src/validation/ValidationArguments";
+import { registerDecorator } from "../../src/index.ts";
+import { ValidationOptions } from "../../src/decorator/ValidationOptions.ts";
+import { ValidatorConstraintInterface } from "../../src/validation/ValidatorConstraintInterface.ts";
+import { ValidatorConstraint } from "../../src/decorator/decorators.ts";
+import { ValidationArguments } from "../../src/validation/ValidationArguments.ts";
 
 export function IsLongerThan(
   property: string,

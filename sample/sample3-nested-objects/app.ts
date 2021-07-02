@@ -1,6 +1,6 @@
-import { Validator } from "../../src/validation/Validator";
-import { Post } from "./Post";
-import { Tag } from "./Tag";
+import { Validator } from "../../src/validation/Validator.ts";
+import { Post } from "./Post.ts";
+import { Tag } from "./Tag.ts";
 
 let validator = new Validator();
 

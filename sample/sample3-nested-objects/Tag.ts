@@ -1,15 +1,10 @@
 import {
-  Contains,
-  IsDate,
-  IsEmail,
-  IsFQDN,
-  IsInt,
   Length,
-} from "../../src/decorator/decorators";
+} from "../../src/decorator/decorators.ts";
 
 export class Tag {
   @Length(10, 20, {
     message: "Tag is too short or long",
   })
-  name: string;
+  name!: string;
 }

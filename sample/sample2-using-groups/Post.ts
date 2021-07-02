@@ -5,7 +5,7 @@ import {
   IsFQDN,
   IsInt,
   Length,
-} from "../../src/decorator/decorators";
+} from "../../src/decorator/decorators.ts";
 
 export class Post {
   @Length(10, 20, {
@@ -16,28 +16,28 @@ export class Post {
     message: "Incorrect length!",
     groups: ["admins"],
   })
-  title: string;
+  title!: string;
 
   @Contains("hello", {
     message: 'It should contain word "hello!"',
     groups: ["users", "moderators"],
   })
-  text: string;
+  text!: string;
 
   @IsInt()
-  rating: number;
+  rating!: number;
 
   @IsEmail(undefined, {
     always: true,
   })
-  email: string;
+  email!: string;
 
   @IsFQDN(undefined, {
     message: "Site address should be correct",
     groups: ["users"],
   })
-  site: string;
+  site!: string;
 
   @IsDate()
-  createDate: Date;
+  createDate!: Date;
 }

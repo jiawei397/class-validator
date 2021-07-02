@@ -1,6 +1,9 @@
 # class-validator
 
-deno run --import-map=import_map.json src/index.ts
+```
+deno run src/index.ts
+deno bundle src/index.ts index.js
+```
 
 ![Build Status](https://github.com/typestack/class-validator/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/typestack/class-validator/branch/develop/graph/badge.svg)](https://codecov.io/gh/typestack/class-validator)
@@ -37,7 +40,11 @@ and node.js platforms.
   - [Synchronous validation](#synchronous-validation)
   - [Manual validation](#manual-validation)
   - [Validation decorators](#validation-decorators)
-  - [Defining validation schema without
+  - [Defining validation schema without decorators](#defining-validation-schema-without-decorators)
+  - [Validating plain objects](#validating-plain-objects)
+  - [Samples](#samples)
+  - [Extensions](#extensions)
+  - [Release notes](#release-notes)
     decorators](#defining-validation-schema-without-decorators)
   - [Validating plain objects](#validating-plain-objects)
   - [Samples](#samples)

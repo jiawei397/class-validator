@@ -1,5 +1,5 @@
-import { ValidatorConstraintInterface } from "../../src/validation/ValidatorConstraintInterface";
-import { ValidatorConstraint } from "../../src/decorator/decorators";
+import { ValidatorConstraintInterface } from "../../src/validation/ValidatorConstraintInterface.ts";
+import { ValidatorConstraint } from "../../src/decorator/decorators.ts";
 
 @ValidatorConstraint()
 export class CustomTextLength implements ValidatorConstraintInterface {

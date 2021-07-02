@@ -1,22 +1,9 @@
-import {
-  ArrayMaxSize,
-  ArrayMinSize,
-  ArrayNotEmpty,
-  Contains,
-  IsDate,
-  IsEmail,
-  IsFQDN,
-  IsInt,
-  IsNotEmpty,
-  MaxLength,
-  MinLength,
-} from "../../src/decorator/decorators";
-import { Validate } from "../../src/decorator/decorators";
-import { CustomTextLength } from "./CustomTextLength";
+import { Validate } from "../../src/decorator/decorators.ts";
+import { CustomTextLength } from "./CustomTextLength.ts";
 
 export class Post {
   @Validate(CustomTextLength, {
     message: "Wrong post title",
   })
-  title: string;
+  title!: string;
 }

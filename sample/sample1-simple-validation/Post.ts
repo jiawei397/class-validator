@@ -10,7 +10,7 @@ import {
   IsInt,
   MaxLength,
   MinLength,
-} from "../../src/decorator/decorators";
+} from "../../src/decorator/decorators.ts";
 
 export enum PostType {
   Public,
@@ -20,22 +20,22 @@ export enum PostType {
 export class Post {
   @MinLength(10)
   @MaxLength(20)
-  title: string;
+  title!: string;
 
   @Contains("hello")
-  text: string;
+  text!: string;
 
   @IsInt()
-  rating: number;
+  rating!: number;
 
   @IsEmail()
-  email: string;
+  email!: string;
 
   @IsFQDN()
-  site: string;
+  site!: string;
 
   @IsDate()
-  createDate: Date;
+  createDate!: Date;
 
   @ArrayNotEmpty()
   @ArrayMinSize(2)
@@ -48,8 +48,8 @@ export class Post {
     each: true,
     message: "Tag is too long. Maximal length is $value characters",
   })
-  tags: string[];
+  tags!: string[] | null;
 
   @IsEnum(PostType)
-  type: PostType;
+  type!: PostType;
 }

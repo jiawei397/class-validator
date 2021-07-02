@@ -1,5 +1,5 @@
-import { Validator } from "../../src/validation/Validator";
-import { Post } from "./Post";
+import { Validator } from "../../src/validation/Validator.ts";
+import { Post } from "./Post.ts";
 
 let validator = new Validator();
 
