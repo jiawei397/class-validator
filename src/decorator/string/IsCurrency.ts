@@ -1,7 +1,7 @@
 import { ValidationOptions } from '../ValidationOptions.ts';
 import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
 import isCurrencyValidator from 'validator/lib/isCurrency.ts';
-import ValidatorJS from 'validator/mod.ts';
+import ValidatorJS from 'validator/types.ts';
 
 export const IS_CURRENCY = 'isCurrency';
 

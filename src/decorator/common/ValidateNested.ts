@@ -20,5 +20,5 @@ export function ValidateNested(validationOptions?: ValidationOptions): PropertyD
       validationOptions: opts,
     };
     getMetadataStorage().addValidationMetadata(new ValidationMetadata(args));
-  };
+  } as any;
 }

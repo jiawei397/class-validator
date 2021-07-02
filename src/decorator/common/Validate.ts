@@ -50,5 +50,5 @@ export function Validate(
         : maybeValidationOptions,
     };
     getMetadataStorage().addValidationMetadata(new ValidationMetadata(args));
-  };
+  } as any;
 }

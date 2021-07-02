@@ -30,5 +30,5 @@ export function ValidateBy(options: ValidateByOptions, validationOptions?: Valid
       constraints: options.constraints,
       validator: options.validator,
     });
-  };
+  } as any;
 }

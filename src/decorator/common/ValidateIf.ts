@@ -20,5 +20,5 @@ export function ValidateIf(
       validationOptions: validationOptions,
     };
     getMetadataStorage().addValidationMetadata(new ValidationMetadata(args));
-  };
+  } as any;
 }

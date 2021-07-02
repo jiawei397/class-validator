@@ -16,5 +16,5 @@ export function ValidatePromise(validationOptions?: ValidationOptions): Property
       validationOptions: validationOptions,
     };
     getMetadataStorage().addValidationMetadata(new ValidationMetadata(args));
-  };
+  } as any;
 }
