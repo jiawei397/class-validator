@@ -1,9 +1,9 @@
-import { ValidationOptions } from '../ValidationOptions.ts';
-import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import isMobilePhoneValidator from 'validator/lib/isMobilePhone.ts';
-import ValidatorJS from 'validator/types.ts';
+import { ValidationOptions } from "../ValidationOptions.ts";
+import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
+import isMobilePhoneValidator from "validator/lib/isMobilePhone.ts";
+import ValidatorJS from "validator/types.ts";
 
-export const IS_MOBILE_PHONE = 'isMobilePhone';
+export const IS_MOBILE_PHONE = "isMobilePhone";
 
 /**
  * Checks if the string is a mobile phone number (locale is either an array of locales (e.g ['sk-SK', 'sr-RS'])
@@ -20,9 +20,10 @@ export const IS_MOBILE_PHONE = 'isMobilePhone';
 export function isMobilePhone(
   value: unknown,
   locale?: ValidatorJS.MobilePhoneLocale,
-  options?: ValidatorJS.IsMobilePhoneOptions
+  options?: ValidatorJS.IsMobilePhoneOptions,
 ): boolean {
-  return typeof value === 'string' && isMobilePhoneValidator(value, locale, options);
+  return typeof value === "string" &&
+    isMobilePhoneValidator(value, locale, options);
 }
 
 /**
@@ -40,17 +41,21 @@ export function isMobilePhone(
 export function IsMobilePhone(
   locale?: ValidatorJS.MobilePhoneLocale,
   options?: ValidatorJS.IsMobilePhoneOptions,
-  validationOptions?: ValidationOptions
+  validationOptions?: ValidationOptions,
 ): PropertyDecorator {
   return ValidateBy(
     {
       name: IS_MOBILE_PHONE,
       constraints: [locale, options],
       validator: {
-        validate: (value, args): boolean => isMobilePhone(value, args!.constraints[0], args!.constraints[1]),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be a phone number', validationOptions),
+        validate: (value, args): boolean =>
+          isMobilePhone(value, args!.constraints[0], args!.constraints[1]),
+        defaultMessage: buildMessage(
+          (eachPrefix) => eachPrefix + "$property must be a phone number",
+          validationOptions,
+        ),
       },
     },
-    validationOptions
+    validationOptions,
   );
 }

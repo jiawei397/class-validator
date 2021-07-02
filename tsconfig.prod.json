@@ -2,6 +2,6 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "strict": false,
-    "declaration": false,
-  },
+    "declaration": false
+  }
 }

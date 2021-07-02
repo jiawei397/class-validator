@@ -1,7 +1,7 @@
-import { ValidationOptions } from '../ValidationOptions.ts';
-import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import { ValidationOptions } from "../ValidationOptions.ts";
+import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
 
-export const EQUALS = 'equals';
+export const EQUALS = "equals";
 
 /**
  * Checks if value matches ("===") the comparison.
@@ -13,7 +13,10 @@ export function equals(value: unknown, comparison: unknown): boolean {
 /**
  * Checks if value matches ("===") the comparison.
  */
-export function Equals(comparison: any, validationOptions?: ValidationOptions): PropertyDecorator {
+export function Equals(
+  comparison: any,
+  validationOptions?: ValidationOptions,
+): PropertyDecorator {
   return ValidateBy(
     {
       name: EQUALS,
@@ -21,11 +24,12 @@ export function Equals(comparison: any, validationOptions?: ValidationOptions): 
       validator: {
         validate: (value, args): boolean => equals(value, args!.constraints[0]),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be equal to $constraint1',
-          validationOptions
+          (eachPrefix) =>
+            eachPrefix + "$property must be equal to $constraint1",
+          validationOptions,
         ),
       },
     },
-    validationOptions
+    validationOptions,
   );
 }

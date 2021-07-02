@@ -1,22 +1,22 @@
 import {
+  ArrayMaxSize,
+  ArrayMinSize,
+  ArrayNotEmpty,
   Contains,
-  IsInt,
-  MinLength,
-  MaxLength,
+  IsDate,
   IsEmail,
   IsFQDN,
-  IsDate,
+  IsInt,
   IsNotEmpty,
-  ArrayNotEmpty,
-  ArrayMinSize,
-  ArrayMaxSize,
-} from '../../src/decorator/decorators';
-import { Validate } from '../../src/decorator/decorators';
-import { CustomTextLength } from './CustomTextLength';
+  MaxLength,
+  MinLength,
+} from "../../src/decorator/decorators";
+import { Validate } from "../../src/decorator/decorators";
+import { CustomTextLength } from "./CustomTextLength";
 
 export class Post {
   @Validate(CustomTextLength, {
-    message: 'Wrong post title',
+    message: "Wrong post title",
   })
   title: string;
 }

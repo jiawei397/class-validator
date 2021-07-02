@@ -1,7 +1,7 @@
-import { ValidationOptions } from '../ValidationOptions.ts';
-import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
+import { ValidationOptions } from "../ValidationOptions.ts";
+import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
 
-export const ARRAY_NOT_EMPTY = 'arrayNotEmpty';
+export const ARRAY_NOT_EMPTY = "arrayNotEmpty";
 
 /**
  * Checks if given array is not empty.
@@ -15,15 +15,20 @@ export function arrayNotEmpty(array: unknown): boolean {
  * Checks if given array is not empty.
  * If null or undefined is given then this function returns false.
  */
-export function ArrayNotEmpty(validationOptions?: ValidationOptions): PropertyDecorator {
+export function ArrayNotEmpty(
+  validationOptions?: ValidationOptions,
+): PropertyDecorator {
   return ValidateBy(
     {
       name: ARRAY_NOT_EMPTY,
       validator: {
         validate: (value, args): boolean => arrayNotEmpty(value),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property should not be empty', validationOptions),
+        defaultMessage: buildMessage(
+          (eachPrefix) => eachPrefix + "$property should not be empty",
+          validationOptions,
+        ),
       },
     },
-    validationOptions
+    validationOptions,
   );
 }

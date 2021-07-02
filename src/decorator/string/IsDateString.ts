@@ -1,14 +1,17 @@
-import { ValidationOptions } from '../ValidationOptions.ts';
-import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import ValidatorJS from 'validator/types.ts';
-import { isISO8601 } from './IsISO8601.ts';
+import { ValidationOptions } from "../ValidationOptions.ts";
+import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
+import ValidatorJS from "validator/types.ts";
+import { isISO8601 } from "./IsISO8601.ts";
 
-export const IS_DATE_STRING = 'isDateString';
+export const IS_DATE_STRING = "isDateString";
 
 /**
  * Alias for IsISO8601 validator
  */
-export function isDateString(value: unknown, options?: ValidatorJS.IsISO8601Options): boolean {
+export function isDateString(
+  value: unknown,
+  options?: ValidatorJS.IsISO8601Options,
+): boolean {
   return isISO8601(value, options);
 }
 
@@ -17,7 +20,7 @@ export function isDateString(value: unknown, options?: ValidatorJS.IsISO8601Opti
  */
 export function IsDateString(
   options?: ValidatorJS.IsISO8601Options,
-  validationOptions?: ValidationOptions
+  validationOptions?: ValidationOptions,
 ): PropertyDecorator {
   return ValidateBy(
     {
@@ -26,11 +29,12 @@ export function IsDateString(
       validator: {
         validate: (value, args): boolean => isDateString(value),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be a valid ISO 8601 date string',
-          validationOptions
+          (eachPrefix) =>
+            eachPrefix + "$property must be a valid ISO 8601 date string",
+          validationOptions,
         ),
       },
     },
-    validationOptions
+    validationOptions,
   );
 }

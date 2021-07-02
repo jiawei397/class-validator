@@ -1,16 +1,16 @@
 import {
-  Contains,
-  IsInt,
-  MinLength,
-  MaxLength,
-  IsEmail,
-  IsFQDN,
-  IsDate,
-  ArrayNotEmpty,
-  ArrayMinSize,
   ArrayMaxSize,
+  ArrayMinSize,
+  ArrayNotEmpty,
+  Contains,
+  IsDate,
+  IsEmail,
   IsEnum,
-} from '../../src/decorator/decorators';
+  IsFQDN,
+  IsInt,
+  MaxLength,
+  MinLength,
+} from "../../src/decorator/decorators";
 
 export enum PostType {
   Public,
@@ -22,7 +22,7 @@ export class Post {
   @MaxLength(20)
   title: string;
 
-  @Contains('hello')
+  @Contains("hello")
   text: string;
 
   @IsInt()
@@ -40,8 +40,14 @@ export class Post {
   @ArrayNotEmpty()
   @ArrayMinSize(2)
   @ArrayMaxSize(5)
-  @MinLength(3, { each: true, message: 'Tag is too short. Minimal length is $value characters' })
-  @MaxLength(50, { each: true, message: 'Tag is too long. Maximal length is $value characters' })
+  @MinLength(3, {
+    each: true,
+    message: "Tag is too short. Minimal length is $value characters",
+  })
+  @MaxLength(50, {
+    each: true,
+    message: "Tag is too long. Maximal length is $value characters",
+  })
   tags: string[];
 
   @IsEnum(PostType)

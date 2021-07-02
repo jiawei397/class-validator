@@ -2,16 +2,16 @@
 
 ```ts
 import {
-  validate,
-  validateOrReject,
-  IsString,
-  IsInt,
   IsDate,
+  IsInt,
+  IsString,
+  Max,
   MaxLength,
   Min,
-  Max,
+  validate,
+  validateOrReject,
   ValidationError,
-} from 'class-validator';
+} from "class-validator";
 
 export class Book {
   @IsString()
@@ -32,19 +32,19 @@ export class Book {
 }
 
 const book = new Book();
-book.title = 'Don Quixote';
-book.author = 'Miguel De Cervantes';
+book.title = "Don Quixote";
+book.author = "Miguel De Cervantes";
 book.rating = 11;
 book.publishDate = new Date();
 
 validate(book).then((errors: ValidationError[]) => {
   if (errors.length > 0) {
-    console.warn('validate() - Validation failed. Errors: ', errors);
+    console.warn("validate() - Validation failed. Errors: ", errors);
   }
 });
 
 validateOrReject(book).catch((errors: ValidationError[]) => {
-  console.warn('validateOrReject() - Validation failed. Errors: ', errors);
+  console.warn("validateOrReject() - Validation failed. Errors: ", errors);
 });
 
 awaitExample();
@@ -53,9 +53,13 @@ async function awaitExample() {
   try {
     await validateOrReject(book);
   } catch (errors) {
-    console.warn('Async validateOrReject() - Validation failed. Errors: ', errors);
+    console.warn(
+      "Async validateOrReject() - Validation failed. Errors: ",
+      errors,
+    );
   }
 }
 ```
 
-Run this example on [Stackblitz](https://stackblitz.com/edit/class-validator-simple-example-u9h1ve?file=index.ts)
+Run this example on
+[Stackblitz](https://stackblitz.com/edit/class-validator-simple-example-u9h1ve?file=index.ts)

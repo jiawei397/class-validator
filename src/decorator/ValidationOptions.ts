@@ -1,4 +1,4 @@
-import { ValidationArguments } from '../validation/ValidationArguments.ts';
+import { ValidationArguments } from "../validation/ValidationArguments.ts";
 
 /**
  * Options used to pass to validation decorators.
@@ -35,5 +35,6 @@ export function isValidationOptions(val: any): val is ValidationOptions {
   if (!val) {
     return false;
   }
-  return 'each' in val || 'message' in val || 'groups' in val || 'always' in val || 'context' in val;
+  return "each" in val || "message" in val || "groups" in val ||
+    "always" in val || "context" in val;
 }

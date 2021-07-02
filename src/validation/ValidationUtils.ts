@@ -1,11 +1,11 @@
-import { ValidationArguments } from './ValidationArguments.ts';
+import { ValidationArguments } from "./ValidationArguments.ts";
 
 /**
  * Convert the constraint to a string to be shown in an error
  */
 export function constraintToString(constraint: unknown): string {
   if (Array.isArray(constraint)) {
-    return constraint.join(', ');
+    return constraint.join(", ");
   }
 
   return `${constraint}`;
@@ -14,20 +14,22 @@ export function constraintToString(constraint: unknown): string {
 export class ValidationUtils {
   static replaceMessageSpecialTokens(
     message: string | ((args: ValidationArguments) => string),
-    validationArguments: ValidationArguments
+    validationArguments: ValidationArguments,
   ): string {
     let messageString: string;
     if (message instanceof Function) {
-      messageString = (message as (args: ValidationArguments) => string)(validationArguments);
-    } else if (typeof message === 'string') {
+      messageString = (message as (args: ValidationArguments) => string)(
+        validationArguments,
+      );
+    } else if (typeof message === "string") {
       messageString = message;
     }
 
     if (messageString! && validationArguments.constraints instanceof Array) {
       validationArguments.constraints.forEach((constraint, index) => {
         messageString = messageString.replace(
-          new RegExp(`\\$constraint${index + 1}`, 'g'),
-          constraintToString(constraint)
+          new RegExp(`\\$constraint${index + 1}`, "g"),
+          constraintToString(constraint),
         );
       });
     }
@@ -36,11 +38,25 @@ export class ValidationUtils {
       messageString! &&
       validationArguments.value !== undefined &&
       validationArguments.value !== null &&
-      typeof validationArguments.value === 'string'
-    )
-      messageString = messageString.replace(/\$value/g, validationArguments.value);
-    if (messageString!) messageString = messageString.replace(/\$property/g, validationArguments.property);
-    if (messageString!) messageString = messageString.replace(/\$target/g, validationArguments.targetName);
+      typeof validationArguments.value === "string"
+    ) {
+      messageString = messageString.replace(
+        /\$value/g,
+        validationArguments.value,
+      );
+    }
+    if (messageString!) {
+      messageString = messageString.replace(
+        /\$property/g,
+        validationArguments.property,
+      );
+    }
+    if (messageString!) {
+      messageString = messageString.replace(
+        /\$target/g,
+        validationArguments.targetName,
+      );
+    }
 
     return messageString!;
   }

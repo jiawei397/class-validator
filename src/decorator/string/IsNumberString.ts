@@ -1,16 +1,19 @@
-import { ValidationOptions } from '../ValidationOptions.ts';
-import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import isNumericValidator from 'validator/lib/isNumeric.ts';
-import ValidatorJS from 'validator/types.ts';
+import { ValidationOptions } from "../ValidationOptions.ts";
+import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
+import isNumericValidator from "validator/lib/isNumeric.ts";
+import ValidatorJS from "validator/types.ts";
 
-export const IS_NUMBER_STRING = 'isNumberString';
+export const IS_NUMBER_STRING = "isNumberString";
 
 /**
  * Checks if the string is numeric.
  * If given value is not a string, then it returns false.
  */
-export function isNumberString(value: unknown, options?: ValidatorJS.IsNumericOptions): boolean {
-  return typeof value === 'string' && isNumericValidator(value, options);
+export function isNumberString(
+  value: unknown,
+  options?: ValidatorJS.IsNumericOptions,
+): boolean {
+  return typeof value === "string" && isNumericValidator(value, options);
 }
 
 /**
@@ -19,17 +22,21 @@ export function isNumberString(value: unknown, options?: ValidatorJS.IsNumericOp
  */
 export function IsNumberString(
   options?: ValidatorJS.IsNumericOptions,
-  validationOptions?: ValidationOptions
+  validationOptions?: ValidationOptions,
 ): PropertyDecorator {
   return ValidateBy(
     {
       name: IS_NUMBER_STRING,
       constraints: [options],
       validator: {
-        validate: (value, args): boolean => isNumberString(value, args!.constraints[0]),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be a number string', validationOptions),
+        validate: (value, args): boolean =>
+          isNumberString(value, args!.constraints[0]),
+        defaultMessage: buildMessage(
+          (eachPrefix) => eachPrefix + "$property must be a number string",
+          validationOptions,
+        ),
       },
     },
-    validationOptions
+    validationOptions,
   );
 }

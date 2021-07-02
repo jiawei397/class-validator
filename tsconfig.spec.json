@@ -5,7 +5,7 @@
     "strictPropertyInitialization": false,
     "sourceMap": false,
     "removeComments": true,
-    "noImplicitAny": false,
+    "noImplicitAny": false
   },
   "exclude": ["node_modules"]
 }

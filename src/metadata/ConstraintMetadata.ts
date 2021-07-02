@@ -1,5 +1,5 @@
-import { ValidatorConstraintInterface } from '../validation/ValidatorConstraintInterface.ts'
-import { getFromContainer } from '../container.ts'
+import { ValidatorConstraintInterface } from "../validation/ValidatorConstraintInterface.ts";
+import { getFromContainer } from "../container.ts";
 
 /**
  * This metadata interface contains information for custom validators.

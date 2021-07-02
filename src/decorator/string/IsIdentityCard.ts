@@ -1,9 +1,9 @@
-import { ValidationOptions } from '../ValidationOptions.ts';
-import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import isIdentityCardValidator from 'validator/lib/isIdentityCard.ts';
-import ValidatorJS from 'validator/types.ts';
+import { ValidationOptions } from "../ValidationOptions.ts";
+import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
+import isIdentityCardValidator from "validator/lib/isIdentityCard.ts";
+import ValidatorJS from "validator/types.ts";
 
-export const IS_IDENTITY_CARD = 'isIdentityCard';
+export const IS_IDENTITY_CARD = "isIdentityCard";
 
 /**
  * Check if the string is a valid identity card code.
@@ -11,8 +11,11 @@ export const IS_IDENTITY_CARD = 'isIdentityCard';
  * Defaults to 'any'.
  * If given value is not a string, then it returns false.
  */
-export function isIdentityCard(value: unknown, locale: ValidatorJS.IdentityCardLocale): boolean {
-  return typeof value === 'string' && isIdentityCardValidator(value, locale);
+export function isIdentityCard(
+  value: unknown,
+  locale: ValidatorJS.IdentityCardLocale,
+): boolean {
+  return typeof value === "string" && isIdentityCardValidator(value, locale);
 }
 
 /**
@@ -23,20 +26,22 @@ export function isIdentityCard(value: unknown, locale: ValidatorJS.IdentityCardL
  */
 export function IsIdentityCard(
   locale?: ValidatorJS.IdentityCardLocale,
-  validationOptions?: ValidationOptions
+  validationOptions?: ValidationOptions,
 ): PropertyDecorator {
   return ValidateBy(
     {
       name: IS_IDENTITY_CARD,
       constraints: [locale],
       validator: {
-        validate: (value, args): boolean => isIdentityCard(value, args!.constraints[0]),
+        validate: (value, args): boolean =>
+          isIdentityCard(value, args!.constraints[0]),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be a identity card number',
-          validationOptions
+          (eachPrefix) =>
+            eachPrefix + "$property must be a identity card number",
+          validationOptions,
         ),
       },
     },
-    validationOptions
+    validationOptions,
   );
 }

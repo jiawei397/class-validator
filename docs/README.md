@@ -33,6 +33,6 @@
   - [Inheritance](https://stackblitz.com/edit/class-transformer-inheritance)
 - [API Reference](api/README.md)
   - [validate](api/validate.md)
-  - [ValidatorOptions ](api/ValidatorOptions.md)
-  - [ValidationError ](api/ValidationError.md)
+  - [ValidatorOptions](api/ValidatorOptions.md)
+  - [ValidationError](api/ValidationError.md)
 - [Change Log](../CHANGELOG.md)

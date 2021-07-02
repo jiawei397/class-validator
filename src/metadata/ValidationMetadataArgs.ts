@@ -1,4 +1,4 @@
-import { ValidationOptions } from '../decorator/ValidationOptions.ts';
+import { ValidationOptions } from "../decorator/ValidationOptions.ts";
 
 /**
  * Constructor arguments for ValidationMetadata class.

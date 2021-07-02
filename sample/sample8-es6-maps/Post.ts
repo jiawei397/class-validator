@@ -1,9 +1,17 @@
-import { Contains, IsInt, Length, IsEmail, IsFQDN, IsDate, ValidateNested } from '../../src/decorator/decorators';
-import { Tag } from './Tag';
+import {
+  Contains,
+  IsDate,
+  IsEmail,
+  IsFQDN,
+  IsInt,
+  Length,
+  ValidateNested,
+} from "../../src/decorator/decorators";
+import { Tag } from "./Tag";
 
 export class Post {
   @Length(10, 20, {
-    message: 'Incorrect length!',
+    message: "Incorrect length!",
   })
   title: string;
 

@@ -34,7 +34,9 @@ export interface ValidationSchema {
        * Message can be either string, either a function that returns a string.
        * Second option allows to use values and custom messages depend of them.
        */
-      message?: string | ((value?: any, constraint1?: any, constraint2?: any) => string);
+      message?:
+        | string
+        | ((value?: any, constraint1?: any, constraint2?: any) => string);
 
       /**
        * Specifies if validated value is an array and each of its item must be validated.

@@ -1,22 +1,28 @@
-import { ValidationOptions } from '../ValidationOptions.ts';
-import { ValidationMetadataArgs } from '../../metadata/ValidationMetadataArgs.ts';
-import { ValidationMetadata } from '../../metadata/ValidationMetadata.ts';
-import { getMetadataStorage } from '../../metadata/MetadataStorage.ts';
-import { ValidationTypes } from '../../validation/ValidationTypes.ts';
-import { ConstraintMetadata } from '../../metadata/ConstraintMetadata.ts';
+import { ValidationOptions } from "../ValidationOptions.ts";
+import { ValidationMetadataArgs } from "../../metadata/ValidationMetadataArgs.ts";
+import { ValidationMetadata } from "../../metadata/ValidationMetadata.ts";
+import { getMetadataStorage } from "../../metadata/MetadataStorage.ts";
+import { ValidationTypes } from "../../validation/ValidationTypes.ts";
+import { ConstraintMetadata } from "../../metadata/ConstraintMetadata.ts";
 
 /**
  * Registers custom validator class.
  */
-export function ValidatorConstraint(options?: { name?: string; async?: boolean }) {
+export function ValidatorConstraint(
+  options?: { name?: string; async?: boolean },
+) {
   return function (target: Function): void {
     const isAsync = options && options.async;
-    let name = options && options.name ? options.name : '';
+    let name = options && options.name ? options.name : "";
     if (!name) {
       name = (target as any).name;
-      if (!name)
+      if (!name) {
         // generate name if it was not given
-        name = name.replace(/\.?([A-Z]+)/g, (x, y) => '_' + (y as string).toLowerCase()).replace(/^_/, '');
+        name = name.replace(
+          /\.?([A-Z]+)/g,
+          (x, y) => "_" + (y as string).toLowerCase(),
+        ).replace(/^_/, "");
+      }
     }
     const metadata = new ConstraintMetadata(target, name, isAsync);
     getMetadataStorage().addConstraintMetadata(metadata);
@@ -27,16 +33,19 @@ export function ValidatorConstraint(options?: { name?: string; async?: boolean }
  * Performs validation based on the given custom validation class.
  * Validation class must be decorated with ValidatorConstraint decorator.
  */
-export function Validate(constraintClass: Function, validationOptions?: ValidationOptions): PropertyDecorator;
+export function Validate(
+  constraintClass: Function,
+  validationOptions?: ValidationOptions,
+): PropertyDecorator;
 export function Validate(
   constraintClass: Function,
   constraints?: any[],
-  validationOptions?: ValidationOptions
+  validationOptions?: ValidationOptions,
 ): PropertyDecorator;
 export function Validate(
   constraintClass: Function,
   constraintsOrValidationOptions?: any[] | ValidationOptions,
-  maybeValidationOptions?: ValidationOptions
+  maybeValidationOptions?: ValidationOptions,
 ): PropertyDecorator {
   return function (object: object, propertyName: string): void {
     const args: ValidationMetadataArgs = {
@@ -44,7 +53,9 @@ export function Validate(
       target: object.constructor,
       propertyName: propertyName,
       constraintCls: constraintClass,
-      constraints: constraintsOrValidationOptions instanceof Array ? constraintsOrValidationOptions : undefined,
+      constraints: constraintsOrValidationOptions instanceof Array
+        ? constraintsOrValidationOptions
+        : undefined,
       validationOptions: !(constraintsOrValidationOptions instanceof Array)
         ? constraintsOrValidationOptions
         : maybeValidationOptions,

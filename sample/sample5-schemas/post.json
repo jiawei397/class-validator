@@ -4,8 +4,7 @@
     "title": [{
       "type": "minLength",
       "constraints": [10]
-    },
-    {
+    }, {
       "type": "maxLength",
       "constraints": [20]
     }],
@@ -27,22 +26,18 @@
     }],
     "tags": [{
       "type": "arrayNotEmpty"
-    },
-    {
+    }, {
       "type": "arrayMinSize",
       "constraints": [2]
-    },
-    {
+    }, {
       "type": "arrayMaxSize",
       "constraints": [5]
-    },
-    {
+    }, {
       "type": "minLength",
       "each": true,
       "constraints": [3],
       "message": "Tag is too short. Minimal length is $constraint1 characters"
-    },
-    {
+    }, {
       "type": "maxLength",
       "each": true,
       "constraints": [50],

@@ -5,7 +5,7 @@
  * Node.js in version 12. We need to include this snippet until Node 12 EOL.
  */
 export function getGlobal() {
-  if (typeof globalThis !== 'undefined') {
+  if (typeof globalThis !== "undefined") {
     return globalThis;
   }
 
@@ -15,7 +15,7 @@ export function getGlobal() {
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore: Cannot find name 'window'.
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore: Cannot find name 'window'.
     return window;
@@ -23,7 +23,7 @@ export function getGlobal() {
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore: Cannot find name 'self'.
-  if (typeof self !== 'undefined') {
+  if (typeof self !== "undefined") {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore: Cannot find name 'self'.
     return self;

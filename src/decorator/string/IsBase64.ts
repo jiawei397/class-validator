@@ -1,30 +1,35 @@
-import { ValidationOptions } from '../ValidationOptions.ts';
-import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import isBase64Validator from 'validator/lib/isBase64.ts';
+import { ValidationOptions } from "../ValidationOptions.ts";
+import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
+import isBase64Validator from "validator/lib/isBase64.ts";
 
-export const IS_BASE64 = 'isBase64';
+export const IS_BASE64 = "isBase64";
 
 /**
  * Checks if a string is base64 encoded.
  * If given value is not a string, then it returns false.
  */
 export function isBase64(value: unknown): boolean {
-  return typeof value === 'string' && isBase64Validator(value, {});
+  return typeof value === "string" && isBase64Validator(value, {});
 }
 
 /**
  * Checks if a string is base64 encoded.
  * If given value is not a string, then it returns false.
  */
-export function IsBase64(validationOptions?: ValidationOptions): PropertyDecorator {
+export function IsBase64(
+  validationOptions?: ValidationOptions,
+): PropertyDecorator {
   return ValidateBy(
     {
       name: IS_BASE64,
       validator: {
         validate: (value, args): boolean => isBase64(value),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be base64 encoded', validationOptions),
+        defaultMessage: buildMessage(
+          (eachPrefix) => eachPrefix + "$property must be base64 encoded",
+          validationOptions,
+        ),
       },
     },
-    validationOptions
+    validationOptions,
   );
 }

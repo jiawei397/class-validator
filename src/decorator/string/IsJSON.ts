@@ -1,30 +1,35 @@
-import { ValidationOptions } from '../ValidationOptions.ts';
-import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import isJSONValidator from 'validator/lib/isJSON.ts';
+import { ValidationOptions } from "../ValidationOptions.ts";
+import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
+import isJSONValidator from "validator/lib/isJSON.ts";
 
-export const IS_JSON = 'isJson';
+export const IS_JSON = "isJson";
 
 /**
  * Checks if the string is valid JSON (note: uses JSON.parse).
  * If given value is not a string, then it returns false.
  */
 export function isJSON(value: unknown): boolean {
-  return typeof value === 'string' && isJSONValidator(value, {});
+  return typeof value === "string" && isJSONValidator(value, {});
 }
 
 /**
  * Checks if the string is valid JSON (note: uses JSON.parse).
  * If given value is not a string, then it returns false.
  */
-export function IsJSON(validationOptions?: ValidationOptions): PropertyDecorator {
+export function IsJSON(
+  validationOptions?: ValidationOptions,
+): PropertyDecorator {
   return ValidateBy(
     {
       name: IS_JSON,
       validator: {
         validate: (value, args): boolean => isJSON(value),
-        defaultMessage: buildMessage(eachPrefix => eachPrefix + '$property must be a json string', validationOptions),
+        defaultMessage: buildMessage(
+          (eachPrefix) => eachPrefix + "$property must be a json string",
+          validationOptions,
+        ),
       },
     },
-    validationOptions
+    validationOptions,
   );
 }

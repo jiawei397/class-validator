@@ -1,8 +1,8 @@
-import { ValidationOptions } from '../ValidationOptions.ts';
-import { buildMessage, ValidateBy } from '../common/ValidateBy.ts';
-import { parsePhoneNumberFromString, CountryCode } from 'libphonenumber-js';
+import { ValidationOptions } from "../ValidationOptions.ts";
+import { buildMessage, ValidateBy } from "../common/ValidateBy.ts";
+import { CountryCode, parsePhoneNumberFromString } from "libphonenumber-js";
 
-export const IS_PHONE_NUMBER = 'isPhoneNumber';
+export const IS_PHONE_NUMBER = "isPhoneNumber";
 
 /**
  * Checks if the string is a valid phone number. To successfully validate any phone number the text must include
@@ -30,19 +30,23 @@ export function isPhoneNumber(value: string, region?: CountryCode): boolean {
  * @param region 2 characters uppercase country code (e.g. DE, US, CH) for country specific validation.
  * If text doesn't start with the international calling code (e.g. +41), then you must set this parameter.
  */
-export function IsPhoneNumber(region?: CountryCode, validationOptions?: ValidationOptions): PropertyDecorator {
+export function IsPhoneNumber(
+  region?: CountryCode,
+  validationOptions?: ValidationOptions,
+): PropertyDecorator {
   return ValidateBy(
     {
       name: IS_PHONE_NUMBER,
       constraints: [region],
       validator: {
-        validate: (value, args): boolean => isPhoneNumber(value, args!.constraints[0]),
+        validate: (value, args): boolean =>
+          isPhoneNumber(value, args!.constraints[0]),
         defaultMessage: buildMessage(
-          eachPrefix => eachPrefix + '$property must be a valid phone number',
-          validationOptions
+          (eachPrefix) => eachPrefix + "$property must be a valid phone number",
+          validationOptions,
         ),
       },
     },
-    validationOptions
+    validationOptions,
   );
 }

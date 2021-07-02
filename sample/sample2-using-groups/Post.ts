@@ -1,19 +1,26 @@
-import { Contains, IsInt, Length, IsEmail, IsFQDN, IsDate } from '../../src/decorator/decorators';
+import {
+  Contains,
+  IsDate,
+  IsEmail,
+  IsFQDN,
+  IsInt,
+  Length,
+} from "../../src/decorator/decorators";
 
 export class Post {
   @Length(10, 20, {
-    message: 'Incorrect length!',
-    groups: ['users', 'moderators'],
+    message: "Incorrect length!",
+    groups: ["users", "moderators"],
   })
   @Length(0, 20, {
-    message: 'Incorrect length!',
-    groups: ['admins'],
+    message: "Incorrect length!",
+    groups: ["admins"],
   })
   title: string;
 
-  @Contains('hello', {
+  @Contains("hello", {
     message: 'It should contain word "hello!"',
-    groups: ['users', 'moderators'],
+    groups: ["users", "moderators"],
   })
   text: string;
 
@@ -26,8 +33,8 @@ export class Post {
   email: string;
 
   @IsFQDN(undefined, {
-    message: 'Site address should be correct',
-    groups: ['users'],
+    message: "Site address should be correct",
+    groups: ["users"],
   })
   site: string;
 
