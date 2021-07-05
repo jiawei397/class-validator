@@ -3,104 +3,103 @@ import {
   IsNotEmpty,
   IsOptional,
   ValidateIf,
-} from "../../src/decorator/decorators";
-import { Validator } from "../../src/validation/Validator";
+} from "../../src/decorator/decorators.ts";
+import { Validator } from "../../src/validation/Validator.ts";
+
+import { assert, assertEquals } from "https://deno.land/std@0.100.0/testing/asserts.ts";
+
 
 const validator = new Validator();
 
-describe("conditional validation", () => {
-  it("shouldn't validate a property when the condition is false", () => {
-    expect.assertions(1);
+Deno.test("shouldn't validate a property when the condition is false", () => {
+  class MyClass {
+    @ValidateIf((o) => false)
+    @IsNotEmpty()
+    title!: string;
+  }
 
-    class MyClass {
-      @ValidateIf((o) => false)
-      @IsNotEmpty()
-      title: string;
-    }
-
-    const model = new MyClass();
-    return validator.validate(model).then((errors) => {
-      expect(errors.length).toEqual(0);
-    });
+  const model = new MyClass();
+  return validator.validate(model).then((errors) => {
+    assertEquals(errors.length, 0);
   });
 
-  it("should validate a property when the condition is true", () => {
-    expect.assertions(5);
 
-    class MyClass {
-      @ValidateIf((o) => true)
-      @IsNotEmpty()
-      title: string = "";
-    }
+});
 
-    const model = new MyClass();
-    return validator.validate(model).then((errors) => {
-      expect(errors.length).toEqual(1);
-      expect(errors[0].target).toEqual(model);
-      expect(errors[0].property).toEqual("title");
-      expect(errors[0].constraints).toEqual({
-        isNotEmpty: "title should not be empty",
-      });
-      expect(errors[0].value).toEqual("");
+Deno.test("should validate a property when the condition is true", () => {
+  class MyClass {
+    @ValidateIf((o) => true)
+    @IsNotEmpty()
+    title: string = "";
+  }
+
+  const model = new MyClass();
+  return validator.validate(model).then((errors) => {
+    assertEquals(errors.length, 1);
+    assertEquals(errors[0].target, model);
+    assertEquals(errors[0].property, "title");
+    assertEquals(errors[0].constraints, {
+      isNotEmpty: "title should not be empty",
     });
+    assertEquals(errors[0].value, "");
+  });
+});
+
+
+Deno.test("should pass the object being validated to the condition function", () => {
+  class MyClass {
+    @ValidateIf((o) => {
+      assert(o instanceof MyClass);
+      assertEquals(o.title, 'title');
+      return true;
+    })
+    @IsNotEmpty()
+    title: string = "title";
+  }
+
+  const model = new MyClass();
+  return validator.validate(model).then((errors) => {
+    assertEquals(errors.length, 0);
   });
 
-  it("should pass the object being validated to the condition function", () => {
-    expect.assertions(3);
 
-    class MyClass {
-      @ValidateIf((o) => {
-        expect(o).toBeInstanceOf(MyClass);
-        expect(o.title).toEqual("title");
-        return true;
-      })
-      @IsNotEmpty()
-      title: string = "title";
-    }
+});
 
-    const model = new MyClass();
-    return validator.validate(model).then((errors) => {
-      expect(errors.length).toEqual(0);
+Deno.test("should validate a property when value is empty", () => {
+
+  class MyClass {
+    @IsOptional()
+    @Equals("test")
+    title: string = "";
+  }
+
+  const model = new MyClass();
+  return validator.validate(model).then((errors) => {
+    assertEquals(errors.length, 1);
+    assertEquals(errors[0].target, model);
+    assertEquals(errors[0].property, "title");
+    assertEquals(errors[0].constraints, {
+      equals: "title must be equal to test",
     });
+    assertEquals(errors[0].value, "");
   });
+});
 
-  it("should validate a property when value is empty", () => {
-    expect.assertions(5);
+Deno.test("should validate a property when value is supplied", () => {
+  class MyClass {
+    @IsOptional()
+    @Equals("test")
+    title: string = "bad_value";
+  }
 
-    class MyClass {
-      @IsOptional()
-      @Equals("test")
-      title: string = "";
-    }
-
-    const model = new MyClass();
-    return validator.validate(model).then((errors) => {
-      expect(errors.length).toEqual(1);
-      expect(errors[0].target).toEqual(model);
-      expect(errors[0].property).toEqual("title");
-      expect(errors[0].constraints).toEqual({
-        equals: "title must be equal to test",
-      });
-      expect(errors[0].value).toEqual("");
+  const model = new MyClass();
+  return validator.validate(model).then((errors) => {
+    assertEquals(errors.length, 1);
+    assertEquals(errors[0].target, model);
+    assertEquals(errors[0].property, "title");
+    assertEquals(errors[0].constraints, {
+      equals: "title must be equal to test",
     });
-  });
-
-  it("should validate a property when value is supplied", () => {
-    class MyClass {
-      @IsOptional()
-      @Equals("test")
-      title: string = "bad_value";
-    }
-
-    const model = new MyClass();
-    return validator.validate(model).then((errors) => {
-      expect(errors.length).toEqual(1);
-      expect(errors[0].target).toEqual(model);
-      expect(errors[0].property).toEqual("title");
-      expect(errors[0].constraints).toEqual({
-        equals: "title must be equal to test",
-      });
-      expect(errors[0].value).toEqual("bad_value");
-    });
+    assertEquals(errors[0].value, "bad_value");
   });
 });
