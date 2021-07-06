@@ -1,9 +1,26 @@
-# class-validator
+# deno_class_validator
 
+Forked from [class-validator][1], now for Deno. 
+
+We can use like this: 
 ```
-deno run src/index.ts
-deno bundle src/index.ts index.js
+import {
+  Contains,
+  IsDate,
+  IsEmail,
+  IsFQDN,
+  IsInt,
+  Length,
+  Max,
+  Min,
+  validate,
+  validateOrReject,
+} from "https://deno.land/x/deno_class_validator/mod.ts";
 ```
+
+Below is the origin docs.
+
+---
 
 ![Build Status](https://github.com/typestack/class-validator/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/typestack/class-validator/branch/develop/graph/badge.svg)](https://codecov.io/gh/typestack/class-validator)
@@ -16,7 +33,7 @@ and node.js platforms.
 
 ## Table of Contents
 
-- [class-validator](#class-validator)
+- [deno_class_validator](#deno_class_validator)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
