@@ -1,9 +1,9 @@
-import { Validator } from "../../src/validation/Validator";
-import { ValidationArguments } from "../../src/validation/ValidationArguments";
-import { registerDecorator } from "../../src/register-decorator";
-import { ValidationOptions } from "../../src/decorator/ValidationOptions";
-import { ValidatorConstraint } from "../../src/decorator/decorators";
-import { ValidatorConstraintInterface } from "../../src/validation/ValidatorConstraintInterface";
+import { Validator } from "../../src/validation/Validator.ts";
+import { ValidationArguments } from "../../src/validation/ValidationArguments.ts";
+import { registerDecorator } from "../../src/register-decorator.ts";
+import { ValidationOptions } from "../../src/decorator/ValidationOptions.ts";
+import { ValidatorConstraint } from "../../src/decorator/decorators.ts";
+import { ValidatorConstraintInterface } from "../../src/validation/ValidatorConstraintInterface.ts";
 
 const validator = new Validator();
 
@@ -47,21 +47,19 @@ describe("decorator with inline validation", () => {
   class MyClass {
     @IsLongerThan("lastName", {
       context: { foo: "bar" },
-      message:
-        "$property must be longer then $constraint1. Given value: $value",
+      message: "$property must be longer then $constraint1. Given value: $value",
     })
-    firstName: string;
-    lastName: string;
+    firstName!: string;
+    lastName!: string;
   }
 
   class MyClassWithAsyncValidator {
     @IsLongerThan("lastName", {
       context: { foo: "bar", promise: true },
-      message:
-        "$property must be longer then $constraint1. Given value: $value",
+      message: "$property must be longer then $constraint1. Given value: $value",
     })
-    firstName: string;
-    lastName: string;
+    firstName!: string;
+    lastName!: string;
   }
 
   it("if firstName is not empty and lastLame is empty then it should succeed", () => {
@@ -149,8 +147,8 @@ describe("decorator with default message", () => {
 
   class SecondClass {
     @IsLonger("lastName")
-    firstName: string;
-    lastName: string;
+    firstName!: string;
+    lastName!: string;
   }
 
   it("if firstName is not empty and lastLame is empty then it should succeed", () => {
@@ -218,13 +216,12 @@ describe("decorator with separate validation constraint class", () => {
   }
 
   class MyClass {
-    firstName: string;
+    firstName!: string;
 
     @IsShorterThan("firstName", {
-      message:
-        "$property must be shorter then $constraint1. Given value: $value",
+      message: "$property must be shorter then $constraint1. Given value: $value",
     })
-    lastName: string;
+    lastName!: string;
   }
 
   it("if firstName is not empty and lastLame is empty then it should succeed", () => {
