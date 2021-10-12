@@ -1,8 +1,9 @@
 # deno_class_validator
 
-Forked from [class-validator][1], now for Deno. 
+Forked from [class-validator][1], now for Deno.
 
-We can use like this: 
+We can use like this:
+
 ```
 import {
   Contains,
@@ -15,7 +16,7 @@ import {
   Min,
   validate,
   validateOrReject,
-} from "https://deno.land/x/deno_class_validator/mod.ts";
+} from "https://deno.land/x/deno_class_validator@v0.0.2/mod.ts";
 ```
 
 Below is the origin docs.
