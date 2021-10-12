@@ -6,4 +6,3 @@ export * from 'https://deno.land/x/deno_libphonenumber@v1.9.20/mod.ts';
 
 export type { CountryCode } from 'https://deno.land/x/deno_libphonenumber@v1.9.20/mod.ts'; // TODO libphonenumber-js lost this type, and I has no time to fix it.
 
-export const version = '0.0.2';
