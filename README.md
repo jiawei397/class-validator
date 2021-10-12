@@ -17,7 +17,7 @@ import {
   Min,
   validate,
   validateOrReject,
-} from "https://deno.land/x/deno_class_validator@v0.0.2/mod.ts";
+} from "https://deno.land/x/deno_class_validator@v1.0.0/mod.ts";
 ```
 
 Below is the origin docs.
