@@ -1,7 +1,7 @@
 # deno_class_validator
 
 Forked from [class-validator
-v0.13.1][https://www.npmjs.com/package/class-validator], now for Deno.
+v0.13.1](https://www.npmjs.com/package/class-validator), now for Deno.
 
 We can use like this:
 
